@@ -1,5 +1,5 @@
 {
-  "name": "@acme/app-ip_address",
+  "name": "yes",
   "version": "0.1.0",
   "description": "An IAP product serving IP address management functions.",
   "main": "main.js",
@@ -18,5 +18,16 @@
   "homepage": "https://github.com/pallab-hash/app-ip_address#readme",
   "dependencies": {
     "ip-cidr": "^2.0.7"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "An",
+    "IAP",
+    "product",
+    "serving",
+    "IP",
+    "address",
+    "management",
+    "functions."
+  ]
 }
