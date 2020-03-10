@@ -102,6 +102,19 @@ class IpAddress {
     limit: 1
   };
 
+   /**
+ * An object which will represent two strings ipv4 and ipv6
+ * 
+ * @param {ipv4} ipv4 address
+ * @param {ipv6} ipv6 address
+ * 
+ */
+const netFormats = {
+  ipv4: null,
+  ipv6: null,
+  };
+  
+
   // Use the object's isValid() method to verify the passed CIDR.
   if (!cidr.isValid()) {
     // If the passed CIDR is invalid, set an error message.
@@ -111,11 +124,20 @@ class IpAddress {
     // Notice the destructering assignment syntax to get the value of the first array's element.
     [firstIpAddress] = cidr.toArray(options);
   }
+
+  /**
+ * It will create an object for net formats which will include ipv4 and ipv6 as a string attribute
+ **/
+const format = Object.create(netFormats);
+format.ipv4 = firstIpAddress;
+format.ipv6 = getIpv4MappedIpv6Address(firstIpAddress);
+
   // Call the passed callback function.
   // Node.js convention is to pass error data as the first argument to a callback.
   // The IAP convention is to pass returned data as the first argument and error
   // data as the second argument to the callback function.
-  return callback(firstIpAddress, callbackError);
+  //return callback(firstIpAddress, callbackError);
+  return callback(format, callbackError);
 }
 }
 module.exports = new IpAddress;

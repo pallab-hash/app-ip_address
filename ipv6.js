@@ -24,7 +24,7 @@ function getIpv4MappedIpv6Address(ipv4) {
       }
     }
     // Passed IPv4 is valid. Now to derive an IPv4-mapped IPv6 address.
-    if (validQuads) {
+  //  if (validQuads) {
       // Hardcode the prefix. During refactor, we might want to make the prefix a const.
       ipv6Address = "0:0:0:0:0:ffff:";
       // Iterate over the IPv4 parts
@@ -42,7 +42,7 @@ function getIpv4MappedIpv6Address(ipv4) {
           ipv6Address = ipv6Address + ':';
         }
       }
-    }
+   // }
   }
   return ipv6Address;
 }
